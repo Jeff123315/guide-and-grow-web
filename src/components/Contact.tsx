@@ -27,8 +27,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Phone</h4>
-                    <p className="text-muted-foreground">(555) 123-4567</p>
-                    <p className="text-sm text-muted-foreground">Available Mon-Fri, 9am-6pm</p>
+                    <p className="text-muted-foreground">+254 742 043 021</p>
+                    <p className="text-sm text-muted-foreground">Available Mon-Fri, 9am-6pm EAT</p>
                   </div>
                 </div>
                 
@@ -38,7 +38,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Email</h4>
-                    <p className="text-muted-foreground">japheth.billy@techhealing.com</p>
+                    <p className="text-muted-foreground">billyjapheth85@gmail.com</p>
                     <p className="text-sm text-muted-foreground">Response within 24 hours</p>
                   </div>
                 </div>
@@ -48,13 +48,13 @@ const Contact = () => {
                     <span className="text-white text-sm">📍</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground">Office Location</h4>
-                    <p className="text-muted-foreground">123 Wellness Drive<br />Suite 200<br />Peaceful City, PC 12345</p>
+                    <h4 className="font-semibold text-foreground">Location</h4>
+                    <p className="text-muted-foreground">Narok County<br />Maasai Mara University<br />Kenya</p>
                   </div>
                 </div>
                 
                 <div className="bg-accent/50 rounded-lg p-4 mt-6">
-                  <h4 className="font-semibold text-foreground mb-2">Office Hours</h4>
+                  <h4 className="font-semibold text-foreground mb-2">Availability (EAT)</h4>
                   <div className="space-y-1 text-sm text-muted-foreground">
                     <div className="flex justify-between">
                       <span>Monday - Thursday</span>
@@ -66,7 +66,7 @@ const Contact = () => {
                     </div>
                     <div className="flex justify-between">
                       <span>Weekend</span>
-                      <span>Emergency appointments available</span>
+                      <span>Virtual sessions available</span>
                     </div>
                   </div>
                 </div>
