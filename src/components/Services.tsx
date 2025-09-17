@@ -15,9 +15,9 @@ const Services = () => {
       gradient: "bg-gradient-healing"
     },
     {
-      title: "Social Work Services",
-      description: "Comprehensive support for navigating social systems and accessing resources.",
-      features: ["Case Management", "Resource Connection", "Advocacy", "Crisis Intervention"],
+      title: "Tech-Enhanced Social Work",
+      description: "Innovative social work services powered by AI and modern technology solutions.",
+      features: ["Digital Case Management", "AI-Assisted Resource Matching", "Tech-Enabled Advocacy", "Virtual Crisis Support"],
       gradient: "bg-gradient-soft"
     }
   ];

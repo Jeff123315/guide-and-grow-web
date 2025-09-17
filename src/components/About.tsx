@@ -7,20 +7,22 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl font-bold text-foreground mb-6">
-              About Michelle Harper
+              About Japheth Billy
             </h2>
             <div className="space-y-6 text-lg text-muted-foreground">
               <p>
-                With over 10 years of experience in mental health and social work, I am dedicated to 
-                providing compassionate, evidence-based care to individuals and families facing life's challenges.
+                A qualified counselor from Maasai Mara University pursuing a Degree in Social Work, I bring 
+                a unique perspective that bridges traditional mental health support with innovative technology solutions.
               </p>
               <p>
-                My approach combines proven therapeutic techniques with a deep understanding of human resilience, 
-                creating a safe space where healing can begin and growth can flourish.
+                My journey has taken an exciting turn into the tech world, where I've pursued a Certificate in 
+                Software Engineering with specialization in AI for Software Engineering. This unique combination 
+                allows me to offer both compassionate counseling and cutting-edge digital wellness solutions.
               </p>
               <p>
-                I believe that everyone deserves support during difficult times, and I'm honored to walk 
-                alongside my clients on their journey toward wellness and recovery.
+                I believe in the power of technology to enhance mental health services while maintaining the 
+                human connection that is essential for healing. My approach integrates traditional counseling 
+                methods with modern technological tools to provide comprehensive support.
               </p>
             </div>
             
@@ -29,42 +31,48 @@ const About = () => {
                 <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
                   <span className="text-white text-xs font-bold">✓</span>
                 </div>
-                <span className="text-foreground font-medium">Master's in Clinical Social Work</span>
+                <span className="text-foreground font-medium">Degree in Social Work - Maasai Mara University</span>
               </div>
               <div className="flex items-center space-x-4">
                 <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
                   <span className="text-white text-xs font-bold">✓</span>
                 </div>
-                <span className="text-foreground font-medium">Licensed Clinical Social Worker (LCSW)</span>
+                <span className="text-foreground font-medium">Qualified Professional Counselor</span>
               </div>
               <div className="flex items-center space-x-4">
                 <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
                   <span className="text-white text-xs font-bold">✓</span>
                 </div>
-                <span className="text-foreground font-medium">Trauma-Informed Care Certified</span>
+                <span className="text-foreground font-medium">Certificate in Software Engineering</span>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">✓</span>
+                </div>
+                <span className="text-foreground font-medium">AI for Software Engineering Specialist</span>
               </div>
             </div>
             
             <Button className="mt-8 bg-gradient-primary hover:opacity-90" size="lg">
-              Learn About My Approach
+              Explore My Tech-Enhanced Approach
             </Button>
           </div>
           
           <div className="relative">
             <div className="bg-gradient-healing rounded-2xl p-8 shadow-card">
               <blockquote className="text-xl text-foreground italic mb-6">
-                "Healing is not about forgetting the past, but about finding the strength to create a better future."
+                "Bridging the gap between traditional counseling and innovative technology to create transformative healing experiences."
               </blockquote>
               <div className="space-y-4">
                 <div className="bg-white/50 rounded-lg p-4">
-                  <h4 className="font-semibold text-foreground mb-2">Specializations</h4>
+                  <h4 className="font-semibold text-foreground mb-2">Dual Specializations</h4>
                   <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
-                    <span>• Anxiety Disorders</span>
-                    <span>• Depression</span>
-                    <span>• Trauma & PTSD</span>
-                    <span>• Family Therapy</span>
-                    <span>• Life Transitions</span>
-                    <span>• Grief Counseling</span>
+                    <span>• Mental Health Counseling</span>
+                    <span>• AI-Enhanced Therapy</span>
+                    <span>• Social Work Practice</span>
+                    <span>• Digital Wellness Tools</span>
+                    <span>• Tech Integration</span>
+                    <span>• Software Development</span>
                   </div>
                 </div>
               </div>

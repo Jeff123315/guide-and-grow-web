@@ -7,11 +7,11 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">MH</span>
+              <span className="text-primary-foreground font-bold text-sm">JB</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">Michelle Harper</h1>
-              <p className="text-sm text-muted-foreground">Licensed Counsellor & Social Worker</p>
+              <h1 className="text-xl font-bold text-foreground">Japheth Billy</h1>
+              <p className="text-sm text-muted-foreground">Counselor & Social Worker | AI Software Engineer</p>
             </div>
           </div>
           
