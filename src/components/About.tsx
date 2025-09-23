@@ -1,9 +1,17 @@
 import { Button } from "@/components/ui/button";
+import familyTherapy from "@/assets/family-therapy-1.jpg";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 bg-background relative overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-5"
+        style={{ backgroundImage: `url(${familyTherapy})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/98 to-background/95"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 sm:mb-6">

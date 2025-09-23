@@ -1,15 +1,63 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-counseling.jpg";
+import counselingSession from "@/assets/counseling-session-1.jpg";
+import therapyOffice from "@/assets/therapy-office-1.jpg";
+import groupTherapy from "@/assets/group-therapy-1.jpg";
+import familyTherapy from "@/assets/family-therapy-1.jpg";
+import counselingOffice from "@/assets/counseling-office-2.jpg";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const backgroundImages = [
+    heroImage,
+    counselingSession,
+    therapyOffice,
+    groupTherapy,
+    familyTherapy,
+    counselingOffice
+  ];
+  
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        (prevIndex + 1) % backgroundImages.length
+      );
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/75"></div>
+      {/* Background Images with Smooth Transition */}
+      {backgroundImages.map((image, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{ backgroundImage: `url(${image})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/75"></div>
+        </div>
+      ))}
+      
+      {/* Image Indicators */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+        {backgroundImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentImageIndex(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentImageIndex 
+                ? 'bg-primary shadow-lg' 
+                : 'bg-white/50 hover:bg-white/75'
+            }`}
+            aria-label={`Switch to background image ${index + 1}`}
+          />
+        ))}
       </div>
       
       {/* Content */}

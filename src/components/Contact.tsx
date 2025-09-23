@@ -1,10 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import counselingOffice from "@/assets/counseling-office-2.jpg";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-gradient-soft">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 bg-gradient-soft relative overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-8"
+        style={{ backgroundImage: `url(${counselingOffice})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/98 to-background/95"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">
             Ready to Begin Your Journey?
