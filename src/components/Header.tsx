@@ -16,14 +16,38 @@ const Header = () => {
             </div>
           </div>
           
-          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            <a href="#services" className="text-foreground hover:text-primary transition-colors">
-              Services
-            </a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">
+          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
+            <div className="relative group">
+              <button className="text-foreground hover:text-primary transition-colors flex items-center space-x-1">
+                <span>Services</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute top-full left-0 w-56 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  <a href="/clinical-social-work" className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary">
+                    Clinical Social Work
+                  </a>
+                  <a href="/community-social-work" className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary">
+                    Community Social Work
+                  </a>
+                  <a href="/child-family-services" className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary">
+                    Child & Family Services
+                  </a>
+                  <a href="/mental-health-counseling" className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary">
+                    Mental Health Counseling
+                  </a>
+                  <a href="/crisis-intervention" className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary">
+                    Crisis Intervention
+                  </a>
+                </div>
+              </div>
+            </div>
+            <a href="/#about" className="text-foreground hover:text-primary transition-colors">
               About
             </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">
+            <a href="/#contact" className="text-foreground hover:text-primary transition-colors">
               Contact
             </a>
           </nav>
@@ -48,14 +72,31 @@ const Header = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[250px] sm:w-[300px]">
-                <nav className="flex flex-col space-y-6 mt-8">
-                  <a href="#services" className="text-lg text-foreground hover:text-primary transition-colors">
-                    Services
-                  </a>
-                  <a href="#about" className="text-lg text-foreground hover:text-primary transition-colors">
+                <nav className="flex flex-col space-y-4 mt-8">
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground mb-3">Services</h3>
+                    <div className="flex flex-col space-y-2 ml-4">
+                      <a href="/clinical-social-work" className="text-sm text-foreground hover:text-primary transition-colors">
+                        Clinical Social Work
+                      </a>
+                      <a href="/community-social-work" className="text-sm text-foreground hover:text-primary transition-colors">
+                        Community Social Work
+                      </a>
+                      <a href="/child-family-services" className="text-sm text-foreground hover:text-primary transition-colors">
+                        Child & Family Services
+                      </a>
+                      <a href="/mental-health-counseling" className="text-sm text-foreground hover:text-primary transition-colors">
+                        Mental Health Counseling
+                      </a>
+                      <a href="/crisis-intervention" className="text-sm text-foreground hover:text-primary transition-colors">
+                        Crisis Intervention
+                      </a>
+                    </div>
+                  </div>
+                  <a href="/#about" className="text-lg text-foreground hover:text-primary transition-colors">
                     About
                   </a>
-                  <a href="#contact" className="text-lg text-foreground hover:text-primary transition-colors">
+                  <a href="/#contact" className="text-lg text-foreground hover:text-primary transition-colors">
                     Contact
                   </a>
                   <Button className="bg-gradient-primary hover:opacity-90 mt-6">
