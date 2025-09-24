@@ -23,9 +23,10 @@ const About = () => {
                 a unique perspective that bridges traditional mental health support with innovative technology solutions.
               </p>
               <p>
-                My journey has taken an exciting turn into the tech world, where I've pursued a Certificate in 
-                Software Engineering with specialization in AI for Software Engineering. This unique combination 
-                allows me to offer both compassionate counseling and cutting-edge digital wellness solutions.
+                My journey has taken an exciting turn into the tech world, where I've pursued Software Engineering 
+                with PLP Academy - an innovative academy aimed at empowering all youths in Africa and globally into tech. 
+                I specialized in AI for Software Engineering, combining this technical expertise with my counseling background 
+                to offer both compassionate care and cutting-edge digital wellness solutions.
               </p>
               <p>
                 I believe in the power of technology to enhance mental health services while maintaining the 
