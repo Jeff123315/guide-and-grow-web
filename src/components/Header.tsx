@@ -24,8 +24,8 @@ const Header = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute top-full left-0 w-56 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-2">
+               <div className="absolute top-full left-0 w-64 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2 max-h-96 overflow-y-auto">
                   <a href="/clinical-social-work" className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary">
                     Clinical Social Work
                   </a>
@@ -40,6 +40,21 @@ const Header = () => {
                   </a>
                   <a href="/crisis-intervention" className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary">
                     Crisis Intervention
+                  </a>
+                  <a href="/school-social-work" className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary">
+                    School Social Work
+                  </a>
+                  <a href="/medical-social-work" className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary">
+                    Medical Social Work
+                  </a>
+                  <a href="/substance-abuse-services" className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary">
+                    Substance Abuse Services
+                  </a>
+                  <a href="/elder-care-services" className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary">
+                    Elder Care Services
+                  </a>
+                  <a href="/policy-advocacy" className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary">
+                    Policy & Advocacy
                   </a>
                 </div>
               </div>
@@ -75,7 +90,7 @@ const Header = () => {
                 <nav className="flex flex-col space-y-4 mt-8">
                   <div>
                     <h3 className="text-lg font-semibold text-foreground mb-3">Services</h3>
-                    <div className="flex flex-col space-y-2 ml-4">
+                    <div className="flex flex-col space-y-2 ml-4 max-h-64 overflow-y-auto">
                       <a href="/clinical-social-work" className="text-sm text-foreground hover:text-primary transition-colors">
                         Clinical Social Work
                       </a>
@@ -90,6 +105,21 @@ const Header = () => {
                       </a>
                       <a href="/crisis-intervention" className="text-sm text-foreground hover:text-primary transition-colors">
                         Crisis Intervention
+                      </a>
+                      <a href="/school-social-work" className="text-sm text-foreground hover:text-primary transition-colors">
+                        School Social Work
+                      </a>
+                      <a href="/medical-social-work" className="text-sm text-foreground hover:text-primary transition-colors">
+                        Medical Social Work
+                      </a>
+                      <a href="/substance-abuse-services" className="text-sm text-foreground hover:text-primary transition-colors">
+                        Substance Abuse Services
+                      </a>
+                      <a href="/elder-care-services" className="text-sm text-foreground hover:text-primary transition-colors">
+                        Elder Care Services
+                      </a>
+                      <a href="/policy-advocacy" className="text-sm text-foreground hover:text-primary transition-colors">
+                        Policy & Advocacy
                       </a>
                     </div>
                   </div>

@@ -10,6 +10,11 @@ import CommunitySocialWork from "./pages/CommunitySocialWork";
 import ChildFamilyServices from "./pages/ChildFamilyServices";
 import MentalHealthCounseling from "./pages/MentalHealthCounseling";
 import CrisisIntervention from "./pages/CrisisIntervention";
+import SchoolSocialWork from "./pages/SchoolSocialWork";
+import MedicalSocialWork from "./pages/MedicalSocialWork";
+import SubstanceAbuseServices from "./pages/SubstanceAbuseServices";
+import ElderCareServices from "./pages/ElderCareServices";
+import PolicyAdvocacy from "./pages/PolicyAdvocacy";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +31,11 @@ const App = () => (
           <Route path="/child-family-services" element={<ChildFamilyServices />} />
           <Route path="/mental-health-counseling" element={<MentalHealthCounseling />} />
           <Route path="/crisis-intervention" element={<CrisisIntervention />} />
+          <Route path="/school-social-work" element={<SchoolSocialWork />} />
+          <Route path="/medical-social-work" element={<MedicalSocialWork />} />
+          <Route path="/substance-abuse-services" element={<SubstanceAbuseServices />} />
+          <Route path="/elder-care-services" element={<ElderCareServices />} />
+          <Route path="/policy-advocacy" element={<PolicyAdvocacy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
