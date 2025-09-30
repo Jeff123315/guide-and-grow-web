@@ -1,18 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   return (
     <header className="w-full bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-2 sm:px-4 py-3 sm:py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xs sm:text-sm">JB</span>
-            </div>
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <img src={logo} alt="Japheth Billy Logo" className="w-8 h-8 sm:w-12 sm:h-12 object-contain" />
             <div className="min-w-0">
               <h1 className="text-sm sm:text-xl font-bold text-foreground truncate">Japheth Billy</h1>
-              <p className="text-xs sm:text-sm text-muted-foreground hidden xs:block">Counselor & Social Worker | AI Software Engineer</p>
+              <p className="text-xs sm:text-sm text-muted-foreground hidden xs:block">Social Work Professional | AI Software Engineering Specialist</p>
             </div>
           </div>
           
