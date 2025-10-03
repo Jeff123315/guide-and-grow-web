@@ -1,13 +1,62 @@
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Home, LogOut, LogIn } from "lucide-react";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/hooks/use-toast";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
+  const [user, setUser] = useState<any>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { toast } = useToast();
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    toast({
+      title: "Signed out",
+      description: "You've been successfully signed out.",
+    });
+    navigate("/");
+  };
+
+  const handleHome = () => {
+    if (user) {
+      navigate("/dashboard");
+    } else {
+      navigate("/");
+    }
+  };
+
   return (
     <header className="w-full bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-2 sm:px-4 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-3">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={handleHome}
+              className="mr-1"
+            >
+              <Home className="h-5 w-5" />
+            </Button>
             <img src={logo} alt="Japheth Billy Logo" className="w-8 h-8 sm:w-12 sm:h-12 object-contain" />
             <div className="min-w-0">
               <h1 className="text-sm sm:text-xl font-bold text-foreground truncate">Japheth Billy</h1>
@@ -67,14 +116,39 @@ const Header = () => {
           </nav>
           
           <div className="flex items-center space-x-2">
-            <Button 
-              variant="default" 
-              size="sm"
-              className="bg-gradient-primary hover:opacity-90 transition-all hidden sm:inline-flex lg:px-6"
-            >
-              <span className="hidden sm:inline">Book Consultation</span>
-              <span className="sm:hidden">Book</span>
-            </Button>
+            {user ? (
+              <>
+                <Button 
+                  variant="default" 
+                  size="sm"
+                  className="bg-gradient-primary hover:opacity-90 transition-all hidden sm:inline-flex lg:px-6"
+                >
+                  <span className="hidden sm:inline">Book Consultation</span>
+                  <span className="sm:hidden">Book</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleSignOut}
+                  className="hidden md:inline-flex"
+                >
+                  <LogOut className="mr-2 h-4 w-4" />
+                  Sign Out
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button 
+                  variant="default" 
+                  size="sm"
+                  onClick={() => navigate("/login")}
+                  className="hidden sm:inline-flex"
+                >
+                  <LogIn className="mr-2 h-4 w-4" />
+                  Sign In
+                </Button>
+              </>
+            )}
             
             {/* Mobile Menu */}
             <Sheet>
@@ -128,9 +202,29 @@ const Header = () => {
                   <a href="/#contact" className="text-lg text-foreground hover:text-primary transition-colors">
                     Contact
                   </a>
-                  <Button className="bg-gradient-primary hover:opacity-90 mt-6">
-                    Book Consultation
-                  </Button>
+                  {user ? (
+                    <>
+                      <Button className="bg-gradient-primary hover:opacity-90 mt-6">
+                        Book Consultation
+                      </Button>
+                      <Button
+                        variant="outline"
+                        onClick={handleSignOut}
+                        className="mt-2"
+                      >
+                        <LogOut className="mr-2 h-4 w-4" />
+                        Sign Out
+                      </Button>
+                    </>
+                  ) : (
+                    <Button
+                      className="bg-gradient-primary hover:opacity-90 mt-6"
+                      onClick={() => navigate("/login")}
+                    >
+                      <LogIn className="mr-2 h-4 w-4" />
+                      Sign In
+                    </Button>
+                  )}
                 </nav>
               </SheetContent>
             </Sheet>
