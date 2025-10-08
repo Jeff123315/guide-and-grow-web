@@ -95,23 +95,23 @@ const CrisisIntervention = () => {
             {crisisTypes.map((crisis, index) => (
               <Card key={index} className="hover:shadow-card transition-all duration-300">
                 <CardHeader className="pb-3 sm:pb-4">
-                  <CardTitle className="text-base sm:text-lg lg:text-xl text-foreground">{crisis.type}</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl lg:text-2xl text-foreground">{crisis.type}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-foreground text-xs sm:text-sm mb-2">Warning Signs:</h4>
+                    <h4 className="font-semibold text-foreground text-sm sm:text-base mb-2">Warning Signs:</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2">
                       {crisis.indicators.map((indicator, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
                           <div className="w-1.5 h-1.5 bg-red-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-xs sm:text-sm text-muted-foreground">{indicator}</span>
+                          <span className="text-sm sm:text-base text-muted-foreground">{indicator}</span>
                         </div>
                       ))}
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground text-xs sm:text-sm mb-2">Our Response:</h4>
-                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{crisis.response}</p>
+                    <h4 className="font-semibold text-foreground text-sm sm:text-base mb-2">Our Response:</h4>
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{crisis.response}</p>
                   </div>
                   <div className="space-y-3 pt-2">
                     <div className="p-3 sm:p-4 bg-green-50 rounded-lg border border-green-200">
@@ -119,8 +119,8 @@ const CrisisIntervention = () => {
                       <p className="text-xs sm:text-sm text-green-900 leading-relaxed">{crisis.kenyanExample}</p>
                     </div>
                     <div className="p-3 sm:p-4 bg-blue-50 rounded-lg border border-blue-200">
-                      <Badge variant="outline" className="mb-2 text-[10px] sm:text-xs border-blue-300 text-blue-800">🌍 Global Example</Badge>
-                      <p className="text-xs sm:text-sm text-blue-900 leading-relaxed">{crisis.globalExample}</p>
+                      <Badge variant="outline" className="mb-2 text-xs sm:text-sm border-blue-300 text-blue-800">🌍 Global Example</Badge>
+                      <p className="text-sm sm:text-base text-blue-900 leading-relaxed">{crisis.globalExample}</p>
                     </div>
                   </div>
                 </CardContent>

@@ -126,31 +126,31 @@ const CommunitySocialWork = () => {
             {communityServices.map((service, index) => (
               <Card key={index} className="hover:shadow-card transition-all duration-300">
                 <CardHeader className="pb-3 sm:pb-4">
-                  <CardTitle className="text-base sm:text-lg lg:text-xl text-foreground">{service.title}</CardTitle>
-                  <CardDescription className="text-xs sm:text-sm text-muted-foreground">
+                  <CardTitle className="text-lg sm:text-xl lg:text-2xl text-foreground">{service.title}</CardTitle>
+                  <CardDescription className="text-sm sm:text-base text-muted-foreground">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
-                    <h4 className="font-semibold text-foreground text-xs sm:text-sm">Key Activities:</h4>
+                    <h4 className="font-semibold text-foreground text-sm sm:text-base">Key Activities:</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {service.activities.map((activity, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
                           <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-xs sm:text-sm text-muted-foreground">{activity}</span>
+                          <span className="text-sm sm:text-base text-muted-foreground">{activity}</span>
                         </div>
                       ))}
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="p-3 sm:p-4 bg-green-50 rounded-lg border border-green-200">
-                      <Badge variant="outline" className="mb-2 text-[10px] sm:text-xs border-green-300 text-green-800">🇰🇪 Kenya Example</Badge>
-                      <p className="text-xs sm:text-sm text-green-900 leading-relaxed">{service.kenyanExample}</p>
+                      <Badge variant="outline" className="mb-2 text-xs sm:text-sm border-green-300 text-green-800">🇰🇪 Kenya Example</Badge>
+                      <p className="text-sm sm:text-base text-green-900 leading-relaxed">{service.kenyanExample}</p>
                     </div>
                     <div className="p-3 sm:p-4 bg-blue-50 rounded-lg border border-blue-200">
-                      <Badge variant="outline" className="mb-2 text-[10px] sm:text-xs border-blue-300 text-blue-800">🌍 Global Example</Badge>
-                      <p className="text-xs sm:text-sm text-blue-900 leading-relaxed">{service.globalExample}</p>
+                      <Badge variant="outline" className="mb-2 text-xs sm:text-sm border-blue-300 text-blue-800">🌍 Global Example</Badge>
+                      <p className="text-sm sm:text-base text-blue-900 leading-relaxed">{service.globalExample}</p>
                     </div>
                   </div>
                 </CardContent>

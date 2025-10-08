@@ -54,8 +54,8 @@ const Services = () => {
                     <div className={`w-10 h-10 sm:w-12 sm:h-12 ${service.gradient} rounded-lg mb-4 flex items-center justify-center`}>
                       <div className="w-5 h-5 sm:w-6 sm:h-6 bg-white/30 rounded-full"></div>
                     </div>
-                    <CardTitle className="text-xl sm:text-2xl text-foreground">{service.title}</CardTitle>
-                    <CardDescription className="text-muted-foreground text-sm sm:text-base">
+                    <CardTitle className="text-xl sm:text-2xl lg:text-3xl text-foreground">{service.title}</CardTitle>
+                    <CardDescription className="text-muted-foreground text-base sm:text-lg">
                       {service.description}
                     </CardDescription>
                   </CardHeader>
@@ -64,7 +64,7 @@ const Services = () => {
                       {service.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start space-x-3">
                           <div className="w-2 h-2 bg-healing-green rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-foreground text-sm sm:text-base">{feature}</span>
+                          <span className="text-foreground text-base sm:text-lg">{feature}</span>
                         </li>
                       ))}
                     </ul>

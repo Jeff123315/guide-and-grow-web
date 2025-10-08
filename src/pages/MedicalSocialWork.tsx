@@ -79,17 +79,17 @@ const MedicalSocialWork = () => {
             {medicalServices.map((service, index) => (
               <Card key={index} className="hover:shadow-card transition-all duration-300">
                 <CardHeader className="pb-3 sm:pb-4">
-                  <CardTitle className="text-base sm:text-lg text-foreground">{service.title}</CardTitle>
-                  <CardDescription className="text-xs sm:text-sm text-muted-foreground">{service.description}</CardDescription>
+                  <CardTitle className="text-lg sm:text-xl text-foreground">{service.title}</CardTitle>
+                  <CardDescription className="text-sm sm:text-base text-muted-foreground">{service.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="space-y-2">
-                    <h4 className="font-semibold text-foreground text-xs">Key Activities:</h4>
+                    <h4 className="font-semibold text-foreground text-sm">Key Activities:</h4>
                     <div className="grid grid-cols-2 gap-1">
                       {service.activities.map((activity, idx) => (
                         <div key={idx} className="flex items-start space-x-1">
                           <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
-                          <span className="text-[10px] sm:text-xs text-muted-foreground leading-tight">{activity}</span>
+                          <span className="text-xs sm:text-sm text-muted-foreground leading-tight">{activity}</span>
                         </div>
                       ))}
                     </div>
@@ -100,8 +100,8 @@ const MedicalSocialWork = () => {
                       <p className="text-[10px] sm:text-xs text-green-900 leading-relaxed">{service.kenyanExample}</p>
                     </div>
                     <div className="p-2 sm:p-3 bg-blue-50 rounded border border-blue-200">
-                      <Badge variant="outline" className="mb-1 text-[10px] border-blue-300 text-blue-800">🌍 Global</Badge>
-                      <p className="text-[10px] sm:text-xs text-blue-900 leading-relaxed">{service.globalExample}</p>
+                      <Badge variant="outline" className="mb-1 text-xs border-blue-300 text-blue-800">🌍 Global</Badge>
+                      <p className="text-sm text-blue-900 leading-relaxed">{service.globalExample}</p>
                     </div>
                   </div>
                 </CardContent>

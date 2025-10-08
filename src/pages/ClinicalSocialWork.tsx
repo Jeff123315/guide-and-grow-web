@@ -124,17 +124,17 @@ const ClinicalSocialWork = () => {
             {clinicalServices.map((service, index) => (
               <Card key={index} className="hover:shadow-card transition-all duration-300">
                 <CardHeader className="pb-3 sm:pb-4">
-                  <CardTitle className="text-base sm:text-lg lg:text-xl text-foreground">{service.title}</CardTitle>
-                  <CardDescription className="text-xs sm:text-sm text-muted-foreground">
+                  <CardTitle className="text-lg sm:text-xl lg:text-2xl text-foreground">{service.title}</CardTitle>
+                  <CardDescription className="text-sm sm:text-base text-muted-foreground">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
-                    <h4 className="font-semibold text-foreground text-xs sm:text-sm">Therapeutic Approaches:</h4>
+                    <h4 className="font-semibold text-foreground text-sm sm:text-base">Therapeutic Approaches:</h4>
                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {service.methods.map((method, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-[10px] sm:text-xs">
+                        <Badge key={idx} variant="secondary" className="text-xs sm:text-sm">
                           {method}
                         </Badge>
                       ))}
@@ -142,12 +142,12 @@ const ClinicalSocialWork = () => {
                   </div>
                   <div className="space-y-3">
                     <div className="p-3 sm:p-4 bg-muted/50 rounded-lg">
-                      <Badge variant="outline" className="mb-2 text-[10px] sm:text-xs">Kenyan Context</Badge>
-                      <p className="text-xs sm:text-sm text-foreground leading-relaxed">{service.kenyanExample}</p>
+                      <Badge variant="outline" className="mb-2 text-xs sm:text-sm">Kenyan Context</Badge>
+                      <p className="text-sm sm:text-base text-foreground leading-relaxed">{service.kenyanExample}</p>
                     </div>
                     <div className="p-3 sm:p-4 bg-muted/30 rounded-lg">
-                      <Badge variant="outline" className="mb-2 text-[10px] sm:text-xs">Global Context</Badge>
-                      <p className="text-xs sm:text-sm text-foreground leading-relaxed">{service.globalExample}</p>
+                      <Badge variant="outline" className="mb-2 text-xs sm:text-sm">Global Context</Badge>
+                      <p className="text-sm sm:text-base text-foreground leading-relaxed">{service.globalExample}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -171,15 +171,15 @@ const ClinicalSocialWork = () => {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                       <span className="text-white font-bold text-sm sm:text-base">✓</span>
                     </div>
-                    <h3 className="font-semibold text-foreground mb-3 sm:mb-4 text-center text-sm sm:text-base">{specialization.area}</h3>
+                    <h3 className="font-semibold text-foreground mb-3 sm:mb-4 text-center text-base sm:text-lg">{specialization.area}</h3>
                     <div className="space-y-2 sm:space-y-3">
                       <div className="p-2 sm:p-3 bg-green-50 rounded border border-green-200">
-                        <p className="text-[10px] sm:text-xs font-medium text-green-800 mb-1">🇰🇪 Kenya</p>
-                        <p className="text-[10px] sm:text-xs text-green-900 leading-relaxed">{specialization.kenyanContext}</p>
+                        <p className="text-xs sm:text-sm font-medium text-green-800 mb-1">🇰🇪 Kenya</p>
+                        <p className="text-xs sm:text-sm text-green-900 leading-relaxed">{specialization.kenyanContext}</p>
                       </div>
                       <div className="p-2 sm:p-3 bg-blue-50 rounded border border-blue-200">
-                        <p className="text-[10px] sm:text-xs font-medium text-blue-800 mb-1">🌍 Global</p>
-                        <p className="text-[10px] sm:text-xs text-blue-900 leading-relaxed">{specialization.globalContext}</p>
+                        <p className="text-xs sm:text-sm font-medium text-blue-800 mb-1">🌍 Global</p>
+                        <p className="text-xs sm:text-sm text-blue-900 leading-relaxed">{specialization.globalContext}</p>
                       </div>
                     </div>
                   </CardContent>

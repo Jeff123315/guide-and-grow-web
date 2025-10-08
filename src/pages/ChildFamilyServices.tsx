@@ -97,25 +97,25 @@ const ChildFamilyServices = () => {
             {services.map((service, index) => (
               <Card key={index} className="hover:shadow-card transition-all duration-300">
                 <CardHeader className="pb-3 sm:pb-4">
-                  <CardTitle className="text-base sm:text-lg lg:text-xl text-foreground">{service.category}</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl lg:text-2xl text-foreground">{service.category}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-3">
                     {service.items.map((item, idx) => (
                       <div key={idx} className="flex items-start space-x-2 sm:space-x-3">
                         <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{item}</span>
+                        <span className="text-muted-foreground text-sm sm:text-base leading-relaxed">{item}</span>
                       </div>
                     ))}
                   </div>
                   <div className="space-y-3 pt-2">
                     <div className="p-3 sm:p-4 bg-green-50 rounded-lg border border-green-200">
-                      <Badge variant="outline" className="mb-2 text-[10px] sm:text-xs border-green-300 text-green-800">🇰🇪 Kenyan Context</Badge>
-                      <p className="text-xs sm:text-sm text-green-900 leading-relaxed">{service.kenyanExample}</p>
+                      <Badge variant="outline" className="mb-2 text-xs sm:text-sm border-green-300 text-green-800">🇰🇪 Kenyan Context</Badge>
+                      <p className="text-sm sm:text-base text-green-900 leading-relaxed">{service.kenyanExample}</p>
                     </div>
                     <div className="p-3 sm:p-4 bg-blue-50 rounded-lg border border-blue-200">
-                      <Badge variant="outline" className="mb-2 text-[10px] sm:text-xs border-blue-300 text-blue-800">🌍 Global Context</Badge>
-                      <p className="text-xs sm:text-sm text-blue-900 leading-relaxed">{service.globalExample}</p>
+                      <Badge variant="outline" className="mb-2 text-xs sm:text-sm border-blue-300 text-blue-800">🌍 Global Context</Badge>
+                      <p className="text-sm sm:text-base text-blue-900 leading-relaxed">{service.globalExample}</p>
                     </div>
                   </div>
                 </CardContent>
