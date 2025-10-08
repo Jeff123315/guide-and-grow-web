@@ -76,9 +76,9 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li>Email: contact@socialwork.com</li>
-              <li>Phone: (555) 123-4567</li>
-              <li>Hours: Mon-Fri, 9AM-5PM</li>
+              <li>Email: billyjapheth85@gmail.com</li>
+              <li>Phone: +254742043021</li>
+              <li>Hours: Mon-Fri, 9AM-6PM EAT</li>
             </ul>
           </div>
         </div>
