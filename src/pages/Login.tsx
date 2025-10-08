@@ -67,52 +67,50 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-soft flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-soft flex items-center justify-center p-4 relative">
       <Button
         variant="ghost"
         onClick={() => navigate("/")}
-        className="absolute top-4 left-4"
+        className="absolute top-6 left-6 hover:bg-background/80"
+        size="sm"
       >
         <Home className="mr-2 h-4 w-4" />
         Back to Home
       </Button>
 
       <div className="w-full max-w-md">
-        <div className="flex justify-center mb-8">
-          <img src={logo} alt="Logo" className="h-20 w-20 object-contain" />
+        <div className="text-center mb-8">
+          <img src={logo} alt="Logo" className="h-16 w-16 object-contain mx-auto mb-4" />
+          <h1 className="text-3xl font-bold mb-2">Welcome Back</h1>
+          <p className="text-muted-foreground">Sign in to your account or create a new one</p>
         </div>
 
-        <Card className="shadow-card border-0">
-          <CardHeader className="text-center">
-            <CardTitle className="text-3xl">Welcome</CardTitle>
-            <CardDescription>
-              Sign in to access your social work dashboard
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
+        <Card className="shadow-elegant border border-border/50 backdrop-blur-sm">
+          <CardContent className="pt-6">
             <Tabs defaultValue="signin" className="w-full">
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="signin">
-                  <LogIn className="mr-2 h-4 w-4" />
+              <TabsList className="grid w-full grid-cols-2 mb-6">
+                <TabsTrigger value="signin" className="gap-2">
+                  <LogIn className="h-4 w-4" />
                   Sign In
                 </TabsTrigger>
-                <TabsTrigger value="signup">
-                  <UserPlus className="mr-2 h-4 w-4" />
+                <TabsTrigger value="signup" className="gap-2">
+                  <UserPlus className="h-4 w-4" />
                   Sign Up
                 </TabsTrigger>
               </TabsList>
 
-              <TabsContent value="signin">
+              <TabsContent value="signin" className="space-y-4 mt-0">
                 <form onSubmit={handleSignIn} className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="signin-email">Email</Label>
+                    <Label htmlFor="signin-email">Email Address</Label>
                     <Input
                       id="signin-email"
                       type="email"
-                      placeholder="your.email@example.com"
+                      placeholder="name@example.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
+                      className="h-11"
                     />
                   </div>
                   <div className="space-y-2">
@@ -120,33 +118,36 @@ const Login = () => {
                     <Input
                       id="signin-password"
                       type="password"
-                      placeholder="••••••••"
+                      placeholder="Enter your password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
+                      className="h-11"
                     />
                   </div>
                   <Button
                     type="submit"
-                    className="w-full"
+                    className="w-full h-11 mt-6"
                     disabled={loading}
+                    size="lg"
                   >
                     {loading ? "Signing in..." : "Sign In"}
                   </Button>
                 </form>
               </TabsContent>
 
-              <TabsContent value="signup">
+              <TabsContent value="signup" className="space-y-4 mt-0">
                 <form onSubmit={handleSignUp} className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="signup-email">Email</Label>
+                    <Label htmlFor="signup-email">Email Address</Label>
                     <Input
                       id="signup-email"
                       type="email"
-                      placeholder="your.email@example.com"
+                      placeholder="name@example.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
+                      className="h-11"
                     />
                   </div>
                   <div className="space-y-2">
@@ -154,17 +155,19 @@ const Login = () => {
                     <Input
                       id="signup-password"
                       type="password"
-                      placeholder="••••••••"
+                      placeholder="Create a password (min. 6 characters)"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
                       minLength={6}
+                      className="h-11"
                     />
                   </div>
                   <Button
                     type="submit"
-                    className="w-full"
+                    className="w-full h-11 mt-6"
                     disabled={loading}
+                    size="lg"
                   >
                     {loading ? "Creating account..." : "Create Account"}
                   </Button>
