@@ -36,6 +36,54 @@ const CommunitySocialWork = () => {
     }
   ];
 
+  const socialProblems = [
+    {
+      title: "Understanding Social Problems",
+      description: "Social problems emerge from the interaction of individuals, groups, and social structures",
+      perspectives: [
+        {
+          type: "Objective Problems",
+          details: "Observable, measurable issues supported by empirical data (e.g., poverty rates, crime statistics, unemployment)"
+        },
+        {
+          type: "Subjective Problems",
+          details: "Issues shaped by perceptions, beliefs, and values that depend on social interpretation"
+        },
+        {
+          type: "Structural Perspective",
+          details: "Problems arising from social, political, and economic systems that create inequality and disadvantage"
+        },
+        {
+          type: "Cultural Perspective",
+          details: "Problems emerging from shared beliefs, values, and norms within cultures"
+        }
+      ]
+    }
+  ];
+
+  const urbanIssues = [
+    {
+      title: "The Slum & Underclass",
+      description: "Urban poverty concentration and social marginalization in informal settlements",
+      kenyanExample: "Kibera slum in Nairobi - overcrowding, poor sanitation, limited access to services, informal economy reliance",
+      globalExample: "Brazilian favelas - urban poverty, gang violence, lack of state services, community self-organization",
+      interventions: ["Community-based upgrading", "Tenure security programs", "Infrastructure improvement", "Economic empowerment"]
+    },
+    {
+      title: "Gentrification Effects",
+      description: "Urban transformation that displaces low-income residents as wealthier populations move in",
+      kenyanExample: "Kilimani and Kileleshwa neighborhoods - rising rents displacing long-term residents, changing community character",
+      globalExample: "Brooklyn, New York - displacement of Black communities, cultural erasure, affordability crisis",
+      challenges: ["Resident displacement", "Cultural changes", "Economic inequality", "Access to services disparity"]
+    },
+    {
+      title: "Social Organization in Neighborhoods",
+      description: "Community networks, institutions, and relationships that define neighborhood functioning",
+      strengths: ["Social cohesion and collective action", "Strong support networks", "Community institutions (churches, schools)", "Social capital development"],
+      challenges: ["Weak social capital in low-income areas", "High residential instability", "Limited institutional support", "Economic pressures"]
+    }
+  ];
+
   const focusAreas = [
     {
       title: "Youth Development",
@@ -156,6 +204,101 @@ const CommunitySocialWork = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Social Problems Framework */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-foreground mb-6 sm:mb-8 text-center px-2">
+              Understanding Social Problems
+            </h2>
+            <Card className="mb-8">
+              <CardContent className="p-4 sm:p-6">
+                <p className="text-sm sm:text-base text-muted-foreground mb-6 leading-relaxed">
+                  Social problems are conditions that negatively affect individuals or groups and require societal attention. 
+                  They emerge from interactions between individuals, groups, and social structures.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {socialProblems[0].perspectives.map((perspective, index) => (
+                    <div key={index} className="p-3 sm:p-4 bg-background rounded-lg border">
+                      <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">{perspective.type}</h4>
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{perspective.details}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Urban Issues */}
+      <section className="py-12 sm:py-16 lg:py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-foreground mb-6 sm:mb-8 text-center px-2">
+              Urbanization & Community Challenges
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+              {urbanIssues.map((issue, index) => (
+                <Card key={index} className="hover:shadow-card transition-all">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-base sm:text-lg">{issue.title}</CardTitle>
+                    <CardDescription className="text-xs sm:text-sm">{issue.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    {issue.interventions && (
+                      <div className="space-y-1">
+                        <h4 className="font-semibold text-xs sm:text-sm">Interventions:</h4>
+                        {issue.interventions.map((intervention, idx) => (
+                          <div key={idx} className="flex items-start space-x-2">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span className="text-xs text-muted-foreground">{intervention}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {issue.challenges && (
+                      <div className="space-y-1">
+                        <h4 className="font-semibold text-xs sm:text-sm">Challenges:</h4>
+                        {issue.challenges.map((challenge, idx) => (
+                          <div key={idx} className="flex items-start space-x-2">
+                            <div className="w-1 h-1 bg-red-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span className="text-xs text-muted-foreground">{challenge}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {issue.strengths && (
+                      <div className="space-y-1">
+                        <h4 className="font-semibold text-xs sm:text-sm">Strengths:</h4>
+                        {issue.strengths.map((strength, idx) => (
+                          <div key={idx} className="flex items-start space-x-2">
+                            <div className="w-1 h-1 bg-green-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span className="text-xs text-muted-foreground">{strength}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {issue.kenyanExample && (
+                      <div className="p-2 bg-green-50 rounded border border-green-200">
+                        <Badge variant="outline" className="mb-1 text-[10px] border-green-300 text-green-800">🇰🇪 Kenya</Badge>
+                        <p className="text-[10px] text-green-900">{issue.kenyanExample}</p>
+                      </div>
+                    )}
+                    {issue.globalExample && (
+                      <div className="p-2 bg-blue-50 rounded border border-blue-200">
+                        <Badge variant="outline" className="mb-1 text-[10px] border-blue-300 text-blue-800">🌍 Global</Badge>
+                        <p className="text-[10px] text-blue-900">{issue.globalExample}</p>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>

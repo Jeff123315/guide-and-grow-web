@@ -5,6 +5,107 @@ import { Badge } from "@/components/ui/badge";
 import groupTherapy from "@/assets/group-therapy-1.jpg";
 
 const PolicyAdvocacy = () => {
+  const povertyTypes = [
+    {
+      type: "Absolute Poverty",
+      definition: "Unable to meet basic survival needs (food, water, shelter, healthcare, education)",
+      kenyanExample: "Families in Turkana living on less than $1.90/day, lacking access to clean water and healthcare",
+      globalExample: "Sub-Saharan Africa communities below World Bank extreme poverty threshold",
+      measurement: "International poverty line: $1.90 per day"
+    },
+    {
+      type: "Relative Poverty",
+      definition: "Poor in relation to others in society, unable to participate fully in economic/social life",
+      kenyanExample: "Nairobi working poor who can afford basics but cannot access quality education or healthcare",
+      globalExample: "US families above poverty line but unable to afford healthcare, education, or adequate housing",
+      measurement: "Comparison to median income in society"
+    },
+    {
+      type: "Situational Poverty",
+      definition: "Temporary poverty due to unforeseen events or life circumstances",
+      kenyanExample: "Family displaced by drought or flooding who lose livelihood temporarily",
+      globalExample: "Family experiencing poverty after job loss, illness, or natural disaster",
+      measurement: "Duration and recovery potential"
+    },
+    {
+      type: "Generational Poverty",
+      definition: "Poverty persisting across multiple generations due to systemic barriers",
+      kenyanExample: "Families in informal settlements where children face same limited opportunities as parents",
+      globalExample: "Marginalized communities with intergenerational lack of education, employment, healthcare access",
+      measurement: "Multi-generational persistence"
+    }
+  ];
+
+  const povertyCauses = [
+    {
+      category: "Economic Factors",
+      causes: ["Unemployment and underemployment", "Low wages and inadequate employment", "Economic inequality and wealth concentration", "Globalization and job displacement"]
+    },
+    {
+      category: "Political Factors",
+      causes: ["Corruption and resource misallocation", "Weak governance and policy failures", "Lack of pro-poor policies", "Political instability"]
+    },
+    {
+      category: "Social Factors",
+      causes: ["Discrimination (race, gender, disability)", "Limited access to education", "Poor health and healthcare access", "Social exclusion and marginalization"]
+    },
+    {
+      category: "Environmental Factors",
+      causes: ["Climate change and natural disasters", "Resource depletion", "Environmental degradation", "Geographic isolation"]
+    }
+  ];
+
+  const povertySolutions = [
+    {
+      solution: "Policy & Funding Reform",
+      description: "Redistributing resources, increasing funding for social programs, pro-poor policies",
+      kenyanExample: "Cash transfer programs like Inua Jamii for elderly and orphans, NHIF expansion",
+      globalExample: "Universal basic income pilots, minimum wage increases, progressive taxation"
+    },
+    {
+      solution: "Education & Skills Development",
+      description: "Access to quality education, vocational training, scholarship programs",
+      kenyanExample: "Free primary education, bursary programs, TVET expansion for youth skills",
+      globalExample: "Community colleges, adult education, apprenticeship programs"
+    },
+    {
+      solution: "Employment Creation",
+      description: "Job creation programs, support for small businesses, economic development",
+      kenyanExample: "Youth fund, Women Enterprise Fund, support for jua kali sector",
+      globalExample: "Green jobs programs, infrastructure investment, social enterprises"
+    },
+    {
+      solution: "Social Safety Nets",
+      description: "Healthcare access, housing assistance, food security programs",
+      kenyanExample: "Universal health coverage push, subsidized housing, food distribution programs",
+      globalExample: "SNAP benefits, Medicaid, public housing, unemployment insurance"
+    }
+  ];
+
+  const inequalityTypes = [
+    {
+      type: "Racial & Ethnic Inequality",
+      description: "Unequal distribution of opportunities and resources based on race/ethnicity",
+      causes: ["Historical discrimination", "Systemic racism", "Segregation", "Cultural biases"],
+      kenyanExample: "Marginalized communities (Somali, Nubian) facing barriers in ID access, land rights, employment",
+      globalExample: "Racial wealth gap in US, Indigenous disadvantage in Australia, Roma discrimination in Europe"
+    },
+    {
+      type: "Economic Inequality",
+      description: "Significant wealth and income gaps between rich and poor",
+      causes: ["Wage disparities", "Wealth concentration", "Tax policies favoring wealthy", "Limited economic mobility"],
+      kenyanExample: "Growing wealth gap between Nairobi elite and rural poor, informal sector exploitation",
+      globalExample: "CEO-to-worker pay ratios, billionaire wealth concentration, working poor phenomenon"
+    },
+    {
+      type: "Gender Inequality",
+      description: "Unequal opportunities, rights, and treatment based on gender",
+      causes: ["Patriarchal structures", "Wage gaps", "Limited political representation", "Gender-based violence"],
+      kenyanExample: "Women's limited land ownership, FGM practices, gender-based violence, wage discrimination",
+      globalExample: "Gender pay gap, underrepresentation in leadership, reproductive rights restrictions"
+    }
+  ];
+
   const advocacyAreas = [
     {
       title: "Social Policy Development",
@@ -170,6 +271,128 @@ const PolicyAdvocacy = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Poverty Framework */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-foreground mb-6 sm:mb-8 text-center px-2">
+              Understanding Poverty as a Social Problem
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              {povertyTypes.map((poverty, index) => (
+                <Card key={index} className="hover:shadow-card transition-all">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-base sm:text-lg">{poverty.type}</CardTitle>
+                    <CardDescription className="text-xs sm:text-sm">{poverty.definition}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div className="p-2 bg-muted/50 rounded">
+                      <p className="text-[10px] sm:text-xs font-medium text-foreground mb-1">Measurement:</p>
+                      <p className="text-[10px] sm:text-xs text-muted-foreground">{poverty.measurement}</p>
+                    </div>
+                    <div className="p-2 bg-green-50 rounded border border-green-200">
+                      <Badge variant="outline" className="mb-1 text-[10px] border-green-300 text-green-800">🇰🇪 Kenya</Badge>
+                      <p className="text-[10px] text-green-900">{poverty.kenyanExample}</p>
+                    </div>
+                    <div className="p-2 bg-blue-50 rounded border border-blue-200">
+                      <Badge variant="outline" className="mb-1 text-[10px] border-blue-300 text-blue-800">🌍 Global</Badge>
+                      <p className="text-[10px] text-blue-900">{poverty.globalExample}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="mb-8">
+              <h3 className="text-lg sm:text-xl font-bold text-foreground mb-4 text-center">Causes of Poverty</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {povertyCauses.map((category, index) => (
+                  <Card key={index}>
+                    <CardContent className="p-4">
+                      <h4 className="font-semibold text-foreground text-sm mb-3">{category.category}</h4>
+                      <div className="space-y-1.5">
+                        {category.causes.map((cause, idx) => (
+                          <div key={idx} className="flex items-start space-x-2">
+                            <div className="w-1 h-1 bg-red-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span className="text-[10px] sm:text-xs text-muted-foreground leading-relaxed">{cause}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg sm:text-xl font-bold text-foreground mb-4 text-center">Solutions to Poverty</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {povertySolutions.map((sol, index) => (
+                  <Card key={index} className="hover:shadow-card transition-all">
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-sm sm:text-base">{sol.solution}</CardTitle>
+                      <CardDescription className="text-xs">{sol.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-2">
+                      <div className="p-2 bg-green-50 rounded border border-green-200">
+                        <Badge variant="outline" className="mb-1 text-[10px] border-green-300 text-green-800">🇰🇪 Kenya</Badge>
+                        <p className="text-[10px] text-green-900">{sol.kenyanExample}</p>
+                      </div>
+                      <div className="p-2 bg-blue-50 rounded border border-blue-200">
+                        <Badge variant="outline" className="mb-1 text-[10px] border-blue-300 text-blue-800">🌍 Global</Badge>
+                        <p className="text-[10px] text-blue-900">{sol.globalExample}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Inequality Framework */}
+      <section className="py-12 sm:py-16 lg:py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-foreground mb-6 sm:mb-8 text-center px-2">
+              Understanding Social Inequality
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+              {inequalityTypes.map((inequality, index) => (
+                <Card key={index} className="hover:shadow-card transition-all">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-base sm:text-lg">{inequality.type}</CardTitle>
+                    <CardDescription className="text-xs sm:text-sm">{inequality.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div>
+                      <h4 className="font-semibold text-xs mb-2">Key Causes:</h4>
+                      <div className="space-y-1">
+                        {inequality.causes.map((cause, idx) => (
+                          <div key={idx} className="flex items-start space-x-2">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span className="text-[10px] text-muted-foreground">{cause}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="p-2 bg-green-50 rounded border border-green-200">
+                      <Badge variant="outline" className="mb-1 text-[10px] border-green-300 text-green-800">🇰🇪 Kenya</Badge>
+                      <p className="text-[10px] text-green-900">{inequality.kenyanExample}</p>
+                    </div>
+                    <div className="p-2 bg-blue-50 rounded border border-blue-200">
+                      <Badge variant="outline" className="mb-1 text-[10px] border-blue-300 text-blue-800">🌍 Global</Badge>
+                      <p className="text-[10px] text-blue-900">{inequality.globalExample}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
