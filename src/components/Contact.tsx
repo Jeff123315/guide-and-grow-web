@@ -1,120 +1,121 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import ContactForm from "./ContactForm";
 import counselingOffice from "@/assets/counseling-office-2.jpg";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-gradient-soft relative overflow-hidden">
+    <section id="contact" className="py-24 bg-gradient-to-b from-accent/10 to-background relative overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-8"
+        className="absolute inset-0 bg-cover bg-center opacity-5"
         style={{ backgroundImage: `url(${counselingOffice})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/98 to-background/95"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background/98 via-background/95 to-background/98" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
-            Ready to Begin Your Journey?
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
+            <Phone className="h-4 w-4 text-primary" />
+            <span className="text-sm font-semibold text-primary">Get In Touch</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            Ready to Begin
+            <span className="block mt-2 gradient-text">Your Journey?</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Taking the first step towards healing takes courage. I'm here to support you every step of the way.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          <div>
-            <Card className="shadow-card border-0">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 max-w-7xl mx-auto">
+          {/* Contact Info */}
+          <div className="lg:col-span-2 space-y-6">
+            <Card className="shadow-card border-2 border-border/50 hover:border-primary/30 transition-colors">
               <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl text-foreground">Get in Touch</CardTitle>
+                <CardTitle className="text-2xl text-foreground flex items-center gap-2">
+                  <Phone className="h-5 w-5 text-primary" />
+                  Contact Information
+                </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 sm:space-y-6">
-                <div className="flex items-start space-x-3 sm:space-x-4">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-white text-sm">📞</span>
+              <CardContent className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-6 w-6 text-primary" />
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <h4 className="font-semibold text-foreground text-sm sm:text-base">Phone</h4>
-                    <p className="text-muted-foreground text-sm sm:text-base break-all">+254 742 043 021</p>
-                    <p className="text-xs sm:text-sm text-muted-foreground">Available Mon-Fri, 9am-6pm EAT</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-3 sm:space-x-4">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-white text-sm">✉️</span>
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <h4 className="font-semibold text-foreground text-sm sm:text-base">Email</h4>
-                    <p className="text-muted-foreground text-sm sm:text-base break-all">billyjapheth85@gmail.com</p>
-                    <p className="text-xs sm:text-sm text-muted-foreground">Response within 24 hours</p>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-foreground mb-1">Phone</h4>
+                    <a href="tel:+254742043021" className="text-muted-foreground hover:text-primary transition-colors">
+                      +254 742 043 021
+                    </a>
+                    <p className="text-sm text-muted-foreground mt-1">Mon-Fri, 9am-6pm EAT</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-3 sm:space-x-4">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-white text-sm">📍</span>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-6 w-6 text-secondary" />
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <h4 className="font-semibold text-foreground text-sm sm:text-base">Location</h4>
-                    <p className="text-muted-foreground text-sm sm:text-base">Narok County<br />Maasai Mara University<br />Kenya</p>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-foreground mb-1">Email</h4>
+                    <a href="mailto:billyjapheth85@gmail.com" className="text-muted-foreground hover:text-primary transition-colors break-all">
+                      billyjapheth85@gmail.com
+                    </a>
+                    <p className="text-sm text-muted-foreground mt-1">Response within 24 hours</p>
                   </div>
                 </div>
                 
-                <div className="bg-accent/50 rounded-lg p-3 sm:p-4 mt-4 sm:mt-6">
-                  <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Availability (EAT)</h4>
-                  <div className="space-y-1 text-xs sm:text-sm text-muted-foreground">
-                    <div className="flex justify-between gap-2">
-                      <span>Monday - Thursday</span>
-                      <span className="text-right">9:00 AM - 6:00 PM</span>
-                    </div>
-                    <div className="flex justify-between gap-2">
-                      <span>Friday</span>
-                      <span className="text-right">9:00 AM - 4:00 PM</span>
-                    </div>
-                    <div className="flex justify-between gap-2">
-                      <span>Weekend</span>
-                      <span className="text-right">Virtual sessions available</span>
-                    </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-accent-green/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-accent-green" />
                   </div>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-foreground mb-1">Location</h4>
+                    <p className="text-muted-foreground">
+                      Narok County<br />
+                      Maasai Mara University<br />
+                      Kenya
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-card bg-gradient-to-br from-accent/20 to-accent/5 border-2 border-accent-green/20">
+              <CardHeader>
+                <CardTitle className="text-lg flex items-center gap-2">
+                  <Clock className="h-5 w-5 text-accent-green" />
+                  Availability (EAT)
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Monday - Thursday</span>
+                  <span className="font-medium text-foreground">9:00 AM - 6:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Friday</span>
+                  <span className="font-medium text-foreground">9:00 AM - 4:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Weekend</span>
+                  <span className="font-medium text-foreground">By Appointment</span>
                 </div>
               </CardContent>
             </Card>
           </div>
           
-          <div className="space-y-6 sm:space-y-8">
-            <Card className="shadow-card border-0">
+          {/* Contact Form */}
+          <div className="lg:col-span-3">
+            <Card className="shadow-card border-2 border-border/50">
               <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl text-foreground">Schedule Your First Session</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground text-sm sm:text-base">
-                  Ready to take the first step? I offer a brief consultation to discuss your needs 
-                  and determine how I can best support your journey.
+                <CardTitle className="text-2xl text-foreground">Send Me a Message</CardTitle>
+                <p className="text-muted-foreground">
+                  Fill out the form below and I'll get back to you as soon as possible.
                 </p>
-                <Button className="w-full bg-gradient-primary hover:opacity-90 text-base sm:text-lg py-3">
-                  Book Free Consultation
-                </Button>
-              </CardContent>
-            </Card>
-            
-            <Card className="shadow-card border-0 bg-healing-green/10">
-              <CardHeader>
-                <CardTitle className="text-lg sm:text-xl text-foreground">Insurance & Payment</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2 sm:space-y-3">
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-healing-green rounded-full flex-shrink-0 mt-2"></div>
-                  <span className="text-foreground text-sm sm:text-base">Most insurance plans accepted</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-healing-green rounded-full flex-shrink-0 mt-2"></div>
-                  <span className="text-foreground text-sm sm:text-base">Sliding scale fees available</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-healing-green rounded-full flex-shrink-0 mt-2"></div>
-                  <span className="text-foreground text-sm sm:text-base">HSA/FSA accepted</span>
-                </div>
+              <CardContent>
+                <ContactForm />
               </CardContent>
             </Card>
           </div>

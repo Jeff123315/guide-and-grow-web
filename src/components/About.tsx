@@ -1,92 +1,152 @@
 import { Button } from "@/components/ui/button";
+import { Heart, Users, Target, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 import familyTherapy from "@/assets/family-therapy-1.jpg";
 
 const About = () => {
+  const values = [
+    {
+      icon: Heart,
+      title: "Compassion",
+      description: "Every journey deserves understanding and empathy"
+    },
+    {
+      icon: Users,
+      title: "Community",
+      description: "Building connections that support growth"
+    },
+    {
+      icon: Target,
+      title: "Empowerment",
+      description: "Helping you discover your inner strength"
+    },
+    {
+      icon: Sparkles,
+      title: "Innovation",
+      description: "Blending tradition with modern solutions"
+    }
+  ];
+
   return (
-    <section id="about" className="py-20 bg-background relative overflow-hidden">
-      {/* Background Image with Overlay */}
+    <section id="about" className="py-24 bg-background relative overflow-hidden">
+      {/* Decorative Background */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-5"
+        className="absolute inset-0 bg-cover bg-center opacity-3"
         style={{ backgroundImage: `url(${familyTherapy})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/98 to-background/95"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background/95" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 sm:mb-6">
-              About Japheth Billy
-            </h2>
-            <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-muted-foreground">
+        {/* Section Header */}
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-accent-green/10 rounded-full px-4 py-2 mb-6">
+            <Heart className="h-4 w-4 text-accent-green" />
+            <span className="text-sm font-semibold text-accent-green">Our Mission</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            Empowering Growth Through
+            <span className="block mt-2 gradient-text">Compassionate Care</span>
+          </h2>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            ThriveSpace exists to create a safe, supportive environment where healing and personal growth flourish
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+          {/* Content */}
+          <div className="animate-slide-up">
+            <h3 className="text-3xl font-bold text-foreground mb-6">
+              Meet Japheth Billy
+            </h3>
+            <div className="space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
               <p>
-                A qualified counselor from Maasai Mara University pursuing a Degree in Social Work, I bring 
-                a unique perspective that bridges traditional mental health support with innovative technology solutions.
+                A qualified counselor from Maasai Mara University pursuing a Degree in Social Work, 
+                bringing unique expertise that bridges traditional mental health support with innovative solutions.
               </p>
               <p>
-                My journey has taken an exciting turn into the tech world, where I've pursued Software Engineering 
-                with PLP Academy - an innovative academy aimed at empowering all youths in Africa and globally into tech. 
-                I specialized in AI for Software Engineering, combining this technical expertise with my counseling background 
-                to offer both compassionate care and cutting-edge digital wellness solutions.
+                With specialized training in AI for Software Engineering from PLP Academy, I combine 
+                compassionate care with modern technology to provide comprehensive, accessible support 
+                for individuals, families, and communities.
               </p>
-              <p>
-                I believe in the power of technology to enhance mental health services while maintaining the 
-                human connection that is essential for healing. My approach integrates traditional counseling 
-                methods with modern technological tools to provide comprehensive support.
+              <p className="text-foreground font-medium">
+                I believe every person deserves a space to thrive. My mission is to empower you with 
+                the tools, support, and guidance needed to overcome challenges and embrace lasting wellbeing.
               </p>
             </div>
             
-            <div className="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
-              <div className="flex items-start space-x-3 sm:space-x-4">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-white text-xs font-bold">✓</span>
+            {/* Credentials */}
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-primary text-xl">🎓</span>
                 </div>
-                <span className="text-foreground font-medium text-sm sm:text-base">Degree in Social Work - Maasai Mara University</span>
+                <div>
+                  <p className="font-semibold text-foreground text-sm">Social Work Degree</p>
+                  <p className="text-xs text-muted-foreground">Maasai Mara University</p>
+                </div>
               </div>
-              <div className="flex items-start space-x-3 sm:space-x-4">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-white text-xs font-bold">✓</span>
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-secondary text-xl">💼</span>
                 </div>
-                <span className="text-foreground font-medium text-sm sm:text-base">Qualified Professional Counselor</span>
+                <div>
+                  <p className="font-semibold text-foreground text-sm">Licensed Counselor</p>
+                  <p className="text-xs text-muted-foreground">Professional Practice</p>
+                </div>
               </div>
-              <div className="flex items-start space-x-3 sm:space-x-4">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-white text-xs font-bold">✓</span>
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 bg-accent-green/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-accent-green text-xl">💻</span>
                 </div>
-                <span className="text-foreground font-medium text-sm sm:text-base">Certificate in Software Engineering</span>
+                <div>
+                  <p className="font-semibold text-foreground text-sm">Software Engineering</p>
+                  <p className="text-xs text-muted-foreground">PLP Academy Graduate</p>
+                </div>
               </div>
-              <div className="flex items-start space-x-3 sm:space-x-4">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-white text-xs font-bold">✓</span>
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-primary text-xl">🤖</span>
                 </div>
-                <span className="text-foreground font-medium text-sm sm:text-base">AI for Software Engineering Specialist</span>
+                <div>
+                  <p className="font-semibold text-foreground text-sm">AI Specialist</p>
+                  <p className="text-xs text-muted-foreground">Tech Integration Expert</p>
+                </div>
               </div>
             </div>
-            
-            <Button className="mt-6 sm:mt-8 bg-gradient-primary hover:opacity-90 w-full sm:w-auto" size="lg">
-              Explore My Tech-Enhanced Approach
-            </Button>
           </div>
           
-          <div className="relative mt-8 lg:mt-0">
-            <div className="bg-gradient-healing rounded-2xl p-6 sm:p-8 shadow-card">
-              <blockquote className="text-lg sm:text-xl text-foreground italic mb-4 sm:mb-6">
-                "Bridging the gap between traditional counseling and innovative technology to create transformative healing experiences."
-              </blockquote>
-              <div className="space-y-4">
-                <div className="bg-white/50 rounded-lg p-3 sm:p-4">
-                  <h4 className="font-semibold text-foreground mb-2 sm:mb-3 text-sm sm:text-base">Dual Specializations</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2 text-xs sm:text-sm text-muted-foreground">
-                    <span>• Mental Health Counseling</span>
-                    <span>• AI-Enhanced Therapy</span>
-                    <span>• Social Work Practice</span>
-                    <span>• Digital Wellness Tools</span>
-                    <span>• Tech Integration</span>
-                    <span>• Software Development</span>
+          {/* Values Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 animate-scale-in">
+            {values.map((value, index) => {
+              const Icon = value.icon;
+              return (
+                <div 
+                  key={index}
+                  className="glass rounded-2xl p-6 hover-lift group"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent-green rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="h-6 w-6 text-white" />
                   </div>
+                  <h4 className="font-bold text-foreground text-lg mb-2">
+                    {value.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    {value.description}
+                  </p>
                 </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <Button size="lg" variant="gradient" asChild>
+            <Link to="/contact">
+              Start Your Journey Today
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

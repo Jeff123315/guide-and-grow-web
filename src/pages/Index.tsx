@@ -1,12 +1,12 @@
-// Update this page (the content is just a fallback if you fail to update the page)
-
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import SocialWorkerRoles from "@/components/SocialWorkerRoles";
 import About from "@/components/About";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
@@ -14,10 +14,12 @@ const Index = () => {
       <Header />
       <Hero />
       <Services />
-      <SocialWorkerRoles />
       <About />
+      <SocialWorkerRoles />
+      <Testimonials />
       <Contact />
       <Footer />
+      <BackToTop />
     </div>
   );
 };
