@@ -1,110 +1,155 @@
-import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-counseling.jpg";
-import counselingSession from "@/assets/counseling-session-1.jpg";
-import therapyOffice from "@/assets/therapy-office-1.jpg";
-import groupTherapy from "@/assets/group-therapy-1.jpg";
-import familyTherapy from "@/assets/family-therapy-1.jpg";
-import counselingOffice from "@/assets/counseling-office-2.jpg";
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Shield, Users, Sparkles, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
+import heroImage from "@/assets/hero-counseling.jpg";
+import therapyOffice from "@/assets/therapy-office-1.jpg";
+import counselingSession from "@/assets/counseling-session-1.jpg";
 
 const Hero = () => {
-  const backgroundImages = [
-    heroImage,
-    counselingSession,
-    therapyOffice,
-    groupTherapy,
-    familyTherapy,
-    counselingOffice
-  ];
-  
+  const backgroundImages = [heroImage, therapyOffice, counselingSession];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => 
-        (prevIndex + 1) % backgroundImages.length
+        prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); // Change image every 5 seconds
+    }, 6000);
 
     return () => clearInterval(interval);
-  }, [backgroundImages.length]);
+  }, []);
+
+  const features = [
+    {
+      icon: Shield,
+      title: "Safe Space",
+      description: "Professional, confidential environment"
+    },
+    {
+      icon: Heart,
+      title: "Expert Care",
+      description: "Licensed social workers & counselors"
+    },
+    {
+      icon: Users,
+      title: "Community",
+      description: "Connect with others on similar journeys"
+    }
+  ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Images with Smooth Transition */}
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background Images with Smooth Transitions */}
       {backgroundImages.map((image, index) => (
         <div
           key={index}
-          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
-            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-          }`}
-          style={{ backgroundImage: `url(${image})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/75"></div>
-        </div>
+          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+          style={{
+            opacity: currentImageIndex === index ? 1 : 0,
+            backgroundImage: `url(${image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
       ))}
-      
-      {/* Image Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+
+      {/* Modern Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/90 to-primary/80" />
+
+      {/* Content Container */}
+      <div className="relative z-10 container mx-auto px-4 py-20 lg:py-32">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 mb-8 animate-fade-in">
+            <Sparkles className="h-4 w-4 text-secondary" />
+            <span className="text-sm font-medium text-white">
+              Professional Mental Health & Social Work Services
+            </span>
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
+            Your Journey to
+            <span className="block mt-2 text-secondary">
+              Thriving Begins Here
+            </span>
+          </h1>
+
+          {/* Subheading */}
+          <p className="text-lg sm:text-xl lg:text-2xl text-white/95 mb-10 max-w-2xl mx-auto leading-relaxed animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            Expert counseling, compassionate social work, and community support to help you grow, heal, and thrive in every aspect of life.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <Button 
+              size="lg" 
+              variant="secondary"
+              className="text-base group"
+              asChild
+            >
+              <Link to="/contact">
+                Book Your Free Consultation
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="text-base border-2 border-white text-white hover:bg-white hover:text-primary"
+              asChild
+            >
+              <Link to="/services">
+                Explore Services
+              </Link>
+            </Button>
+          </div>
+
+          {/* Feature Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto animate-scale-in" style={{ animationDelay: '0.3s' }}>
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <div 
+                  key={index}
+                  className="glass rounded-2xl p-6 hover-lift group"
+                >
+                  <div className="bg-secondary/20 w-14 h-14 rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="h-7 w-7 text-secondary" />
+                  </div>
+                  <h3 className="text-white font-semibold text-lg mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-white/80 text-sm">
+                    {feature.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* Image Navigation Dots */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
         {backgroundImages.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentImageIndex(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentImageIndex 
-                ? 'bg-primary shadow-lg' 
-                : 'bg-white/50 hover:bg-white/75'
+            className={`transition-all duration-300 rounded-full ${
+              currentImageIndex === index 
+                ? 'w-10 h-3 bg-secondary' 
+                : 'w-3 h-3 bg-white/50 hover:bg-white/80'
             }`}
-            aria-label={`Switch to background image ${index + 1}`}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
-      
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-12 sm:py-16 lg:py-20">
-        <div className="max-w-4xl">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
-            Healing Starts with
-            <span className="bg-gradient-primary bg-clip-text text-transparent block sm:inline"> Understanding</span>
-          </h1>
-          
-          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed max-w-2xl">
-            Professional counselling and social work services to help you navigate life's challenges. 
-            Creating a safe, supportive space where healing and growth can flourish.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
-            <Button 
-              size="lg" 
-              className="bg-gradient-primary hover:opacity-90 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 shadow-soft w-full sm:w-auto"
-            >
-              Schedule Your Session
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 border-primary/30 hover:bg-accent w-full sm:w-auto"
-            >
-              Learn More About Services
-            </Button>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 text-sm sm:text-base text-muted-foreground">
-            <div className="flex items-center space-x-2 justify-center sm:justify-start">
-              <div className="w-3 h-3 bg-healing-green rounded-full flex-shrink-0"></div>
-              <span>Licensed Professional</span>
-            </div>
-            <div className="flex items-center space-x-2 justify-center sm:justify-start">
-              <div className="w-3 h-3 bg-healing-green rounded-full flex-shrink-0"></div>
-              <span>Confidential Sessions</span>
-            </div>
-            <div className="flex items-center space-x-2 justify-center sm:justify-start">
-              <div className="w-3 h-3 bg-healing-green rounded-full flex-shrink-0"></div>
-              <span>Flexible Scheduling</span>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-secondary/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-10 w-32 h-32 bg-accent-green/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
     </section>
   );
 };
