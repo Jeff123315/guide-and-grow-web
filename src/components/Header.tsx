@@ -66,9 +66,12 @@ const Header = () => {
           </div>
           
           <nav className="hidden lg:flex items-center space-x-6">
-            <a href="/#about" className="text-foreground hover:text-primary transition-colors font-medium">
+            <Link to="/about" className="text-foreground hover:text-primary transition-colors font-medium">
               About
-            </a>
+            </Link>
+            <Link to="/team" className="text-foreground hover:text-primary transition-colors font-medium">
+              Team
+            </Link>
             <div className="relative group">
               <button className="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1">
                 <span>Services</span>
@@ -111,12 +114,15 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <a href="/resources" className="text-foreground hover:text-primary transition-colors font-medium">
+            <Link to="/resources" className="text-foreground hover:text-primary transition-colors font-medium">
               Resources
-            </a>
-            <a href="/#contact" className="text-foreground hover:text-primary transition-colors font-medium">
+            </Link>
+            <Link to="/faqs" className="text-foreground hover:text-primary transition-colors font-medium">
+              FAQs
+            </Link>
+            <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-medium">
               Contact
-            </a>
+            </Link>
           </nav>
           
           <div className="flex items-center space-x-2">
@@ -213,15 +219,21 @@ const Header = () => {
                       </a>
                     </div>
                   </div>
-                  <a href="/#about" className="text-lg text-foreground hover:text-primary transition-colors">
+                  <Link to="/about" className="text-lg text-foreground hover:text-primary transition-colors">
                     About
-                  </a>
-                  <a href="/resources" className="text-lg text-foreground hover:text-primary transition-colors">
+                  </Link>
+                  <Link to="/team" className="text-lg text-foreground hover:text-primary transition-colors">
+                    Team
+                  </Link>
+                  <Link to="/resources" className="text-lg text-foreground hover:text-primary transition-colors">
                     Resources
-                  </a>
-                  <a href="/#contact" className="text-lg text-foreground hover:text-primary transition-colors">
+                  </Link>
+                  <Link to="/faqs" className="text-lg text-foreground hover:text-primary transition-colors">
+                    FAQs
+                  </Link>
+                  <Link to="/contact" className="text-lg text-foreground hover:text-primary transition-colors">
                     Contact
-                  </a>
+                  </Link>
                   {user ? (
                     <>
                       <Button className="bg-gradient-primary hover:opacity-90 mt-6">
