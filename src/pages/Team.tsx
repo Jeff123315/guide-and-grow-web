@@ -10,15 +10,15 @@ import { Mail, Linkedin, Award, GraduationCap, Heart } from "lucide-react";
 const Team = () => {
   const founder = {
     name: "Japheth Billy",
-    role: "Founder & Lead Therapist",
-    credentials: "MSW, LCSW, EMDR Certified",
+    role: "Founder & Social Work Professional",
+    credentials: "Bachelor of Arts in Sociology & Social Work (Maasai Mara University)",
     image: "/placeholder.svg",
-    bio: "Japheth Billy founded ThriveSpace with a vision to make quality mental health services accessible to all. With over a decade of experience in clinical social work and community development, Japheth brings a holistic, culturally-sensitive approach to therapy. Specializing in trauma-informed care, family systems, and community mental health, Japheth is passionate about creating spaces where healing and growth can flourish.",
+    bio: "Japheth Billy is a dedicated social work professional based in Narok County, Kenya. A graduate of Maasai Mara University with a Bachelor of Arts in Sociology and Social Work, Japheth brings comprehensive expertise in community development, counseling, and social welfare. With strong analytical abilities and excellent interpersonal skills, Japheth founded ThriveSpace to provide accessible mental health and social work services that address the unique needs of individuals and communities. Passionate about advocacy and client-centered care, Japheth is committed to creating positive change through professional, compassionate support.",
     specializations: [
-      "Trauma & PTSD Treatment",
-      "Family Therapy",
-      "Community Mental Health",
-      "Cultural Competency"
+      "Community Development",
+      "Counseling & Guidance",
+      "Social Welfare Services",
+      "Advocacy & Client Support"
     ],
     email: "billyjapheth85@gmail.com",
     linkedin: "#"

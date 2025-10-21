@@ -81,10 +81,10 @@ const About = () => {
                   ThriveSpace was founded with a clear vision: to make quality mental health and social work services accessible, approachable, and effective for everyone who needs them.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Founded by <span className="font-semibold text-foreground">Japheth Billy</span>, a passionate advocate for mental wellness and community development, ThriveSpace emerged from the recognition that many people face barriers to accessing mental health support.
+                  Founded by <span className="font-semibold text-foreground">Japheth Billy</span>, a dedicated social work professional from Narok County, Kenya, ThriveSpace emerged from a deep commitment to community development and social welfare. A graduate of Maasai Mara University with a Bachelor of Arts in Sociology and Social Work, Japheth recognized the need for accessible mental health and social services that are culturally sensitive and client-centered.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  We believe that everyone deserves a space to heal, grow, and thrive. Our approach combines evidence-based therapeutic practices with cultural sensitivity and genuine compassion.
+                  We believe that everyone deserves a space to heal, grow, and thrive. Our approach combines professional social work practices, counseling expertise, and community-focused interventions with cultural sensitivity and genuine compassion.
                 </p>
               </div>
               
