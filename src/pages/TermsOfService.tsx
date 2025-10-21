@@ -193,8 +193,8 @@ const TermsOfService = () => {
                       If you have questions about these Terms of Service, please contact us:
                     </p>
                     <div className="text-muted-foreground space-y-1 mt-4">
-                      <p><strong>Email:</strong> hello@thrivespace.com</p>
-                      <p><strong>Phone:</strong> +254 700 123 456</p>
+                      <p><strong>Email:</strong> billyjapheth85@gmail.com</p>
+                      <p><strong>Phone:</strong> +254 742 043 021</p>
                       <p><strong>Address:</strong> ThriveSpace, Nairobi, Kenya</p>
                     </div>
                   </section>

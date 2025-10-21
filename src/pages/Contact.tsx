@@ -11,13 +11,13 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+254 700 123 456", "+254 700 123 457"],
-      description: "Mon-Fri, 8am-6pm EAT"
+      details: ["+254 742 043 021"],
+      description: "Mon-Fri, 9am-6pm EAT"
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["hello@thrivespace.com", "support@thrivespace.com"],
+      details: ["billyjapheth85@gmail.com"],
       description: "We respond within 24 hours"
     },
     {

@@ -20,7 +20,7 @@ const Team = () => {
       "Community Mental Health",
       "Cultural Competency"
     ],
-    email: "japheth@thrivespace.com",
+    email: "billyjapheth85@gmail.com",
     linkedin: "#"
   };
 
